@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap');
+
+:root{
+  --bg-light:#959597;
+  --bg-dark:#fff;
+
+  --btn-light:#959597;
+  --btn-dark:#fff;
+
+  --text-light: ;
+  --text-dark: ;
+}
+// colors
+$info: #9af3f3;
+$primary: #444;
+$success: #4ade80;
+$danger: #ef4444;
+$dark: #121614;
+$light: #ccc;
+ [color-schemie='light']{
+--bg-color:var(var(--bg-light))
+--text-color:var(var(--text-dark))
+ }
+ [color-scheme='dark']{
+--bg-color: var(--bg-dark)
+--text-color:var(var(--text-light))
+ }
+// box shadow
+$shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302),
+  0 1px 3px 1px rgba(60, 64, 67, 0.149);
+
+// transition
+$transition: all 250ms ease-out;
+
+*,
+*::after,
+*::before {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+  background-color: var(--bg-color);
+  color: $primary;
+}
+
+.form-container{
+  max-width: 960px;
+  margin: 1rem auto;
+
+  h1 {
+    font-size: 1.5rem;
+    font-weight: normal;
+    text-align: center;
+  }
+
+  .message{
+    margin: 1em 0;
+    color: white;
+    padding: 1em;
+    text-align: center;
+    box-shadow: $shadow;
+
+    &.success-message{
+      background-color: $success;
+    }
+    &.remove-message{
+      background-color: $info;
+    }
+    &.alert-message {
+      background-color: $danger;
+    }
+  }
+
+  form{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin: 1em 0;
+    width: 100%;
+  }
+    
+  input, textarea{
+    padding: 0.5em;
+    flex: 1 1 100%;
+    font-family: inherit;
+    font-size: inherit;
+    color: $dark;
+    border: 2px solid rgba($info, 0.2);      border-radius: 6px;
+      
+  }
+      
+    
+  textarea{
+   resize: none;
+  }
+
+  button[type="submit"] {
+   background-color: $primary;
+   box-shadow: $shadow;
+   border: 3px solid transparent;
+   font-size: 1rem;
+   color: white;
+   padding: 0.5em 0.5em;
+   cursor: pointer;
+   transition: $transition;
+  
+    &:hover, &:focus{
+      box-shadow: none;
+      background-color: rgba($dark, 0.9);
+      border: 3px solid rgba($info, 0.5);
+    }
+  }
+
+
+  &:focus{
+    outline: 1px solid $info;
+  }
+}
+
+
+.note-container{
+  width: 90%;
+  max-width: 1200px;
+  margin: 2em auto 1em;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1em;
+
+  .note{
+    flex: 0 1 24rem;
+    background-color: white;
+    padding: 1.5em;
+    border: 3px solid rgba($info, 0.2);
+    border-radius: 8px;
+    transition: $transition;
+
+    &:hover{
+      box-shadow: $shadow;
+    }
+  
+
+   .note__title{
+     font-size: 1rem;
+     font-weight: 500;
+     margin-bottom: 0.5em;
+    }
+
+   .note__body{
+     font-size: 0.9rem;
+     overflow: hidden;
+     text-overflow: ellipsis;
+     --webkit-line-clamp:4;
+   }
+
+   .note__btns{
+     display: flex;
+     justify-content: flex-end;
+     gap: 0.5em;
+     margin-top: 1em;
+  
+
+     .note__btn{
+       font-size: 0.8em;
+       width: 2em;
+       height: 2em;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       cursor: pointer;
+       border-radius: 50%;
+       transition: $transition;
+  
+       i{
+         pointer-events: none;
+        }
+    
+       &:focus, &:hover{
+         box-shadow: $shadow;
+        }
+
+      
+      
+       &.note__view{
+         background-color: $info;
+         box-shadow: $shadow rgba($primary, 0.2);
+        }
+
+       &.note__delete{
+         background-color:$danger ;
+         box-shadow: $shadow rgba($danger, 0.2);
+        }
+      }
+    
+    }
+  }
+}
+

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/styles.css" />
+    <link rel="stylesheet" href="phone-call.png" type="image/fx-icon">
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script defer src="app.js"></script>
+    <title>Keep Notes</title>
+  </head>
+  <body>
+    <audio src="https://github.com/thethmuu/keep-notes-app/blob/continue-test/sound/on-off-sound.mp3?raw=true" class="toggle-sound" data-attribute="adapted from user 160033 file on freesound.org https://freesound.org/people/160033/sounds/366184/ under CC BY-NC 3.0"></audio>
+    <nav>
+      <button class="toggle-btn"></button>
+    </nav>
+    <!-- modal -->
+    <dialog >
+      <button class="modal__btn">&times;</button>
+      <h2 class="modal__title">title</h2>
+      <p class="modal__body">note body</p>
+    </dialog>
+    <!-- form -->
+    <div class="form-container">
+      <div class="message alert-message">hi</div>
+      <h1>Keep Notes</h1>
+      
+      <form>
+        <input type="text" id="title" placeholder="Title" />
+
+        <textarea
+          type="text"
+          id="note"
+          cols="30"
+          rows="5"
+          placeholder="Take a note...`"
+        ></textarea>
+
+        <button type="submit">Save</button>
+      </form>
+    </div>
+    <div class="note-container">
+      <!-- for prototype -->
+      <div class="note">
+        <h2 class="note__title">CSS Postion</h2>
+        <p class="note__body">relative</p>
+        <div class="note__btns">
+          <button class="note__btn note__view">
+            <i class="fa-solid fa-eye"></i>
+          </button>
+          <button class="note__btn note__delete">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </div>
+      </div>
+      
+      <div class="note">
+        <h2 class="note__title">CSS Postion</h2>
+        <p class="note__body">relative</p>
+        <div class="note__btns">
+          <button class="note__btn note__view">
+            <i class="fa-solid fa-eye"></i>
+          </button>
+          <button class="note__btn note__delete">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </div>
+      </div>
+      </div>
+    </div>
+    
+  </body>
+</html>
